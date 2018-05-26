@@ -20,4 +20,4 @@ Simple To Do Checklist program
             -     > .\todochecklist.bat
 
 ### Sample Image:
-[sample](ToDoChecklist.png)
+![sample](ToDoChecklist.png)
