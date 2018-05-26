@@ -16,12 +16,14 @@ class ChecklistGUI:
         tmpent = Entry(master)
         tmpent.grid(row=self.n,column=2)
         tmpent.focus()
+        tmpent.bind('<Return>', self.enter_event)
         self.item_list.append((tmpbutt, tmpent))
         tmpbutt = None
         tmpent = None
         
         self.plus = Button(master, text="   +   ", command=self.add_one)
         self.plus.grid(row=self.n+1,column=2)
+    
 
     def check(self, row):
         textobj = self.item_list[row-1][1]
@@ -35,10 +37,10 @@ class ChecklistGUI:
 
         textobj.delete(0, END)
         textobj.insert(0, txt)
-        
-
     ## End check
 
+    def enter_event(self, event):
+        self.add_one()
 
     def add_one(self):
         self.n += 1
@@ -46,6 +48,7 @@ class ChecklistGUI:
         tmpbutt.grid(row=self.n,column=1)
         tmpent = Entry(self.master)
         tmpent.grid(row=self.n,column=2)
+        tmpent.bind('<Return>', self.enter_event)
         self.item_list.append((tmpbutt, tmpent))
         tmpbutt = None
         tmpent = None
