@@ -136,7 +136,8 @@ class ChecklistGUI:
         tmpent = Entry(self.master)
         tmpent.grid(row=self.n,column=2)
         tmpent.bind('<Return>', self.enter_event)
-
+        tmpent.focus()
+    
         self.item_list.append((tmpbutt, tmpent))
         tmpbutt = None
         tmpent = None
