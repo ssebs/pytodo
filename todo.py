@@ -84,7 +84,7 @@ class ChecklistGUI:
         with open(filename, "r") as lines:
             for line in lines:
                 #print(line)
-                spl = line.split("`") # note that this is a tick `
+                spl = line.split("~") # note that this is a tick `
                 x = spl[0].strip()
                 itm = spl[1].strip()
                 items.append((x,itm))
